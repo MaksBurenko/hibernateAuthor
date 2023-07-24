@@ -1,3 +1,5 @@
+import com.mysql.cj.xdevapi.SessionFactory;
+
 import javax.security.auth.login.Configuration;
 
 public class HibernateUtil {
