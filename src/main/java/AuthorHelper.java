@@ -1,10 +1,10 @@
-import com.mysql.cj.Session;
-import com.mysql.cj.xdevapi.SessionFactory;
 import entity.Author;
 
-
-import javax.management.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.persistence.criteria.Selection;
 import java.util.List;
@@ -21,9 +21,9 @@ public class AuthorHelper {
 
         Session session = sessionFactory.openSession();
 
-        CriteriaBuilder cb = session.getCreateBuilder;
+        CriteriaBuilder cb = session.getCriteriaBuilder();
 
-        CriteriaQuary cq = cb.createQuary(Author.class);
+        CriteriaQuery cq = cb.createQuery(Author.class);
 
         Root<Author> root = cq.from(Author.class);
 
@@ -41,7 +41,7 @@ public class AuthorHelper {
 
     }
 
-    public Author getAuthorById(long ig) {
+    public Author getAuthorById(long id) {
         Session session = sessionFactory.openSession();
 
         Author author = session.get(Author.class, id);

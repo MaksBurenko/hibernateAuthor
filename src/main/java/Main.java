@@ -1,15 +1,17 @@
 import entity.Author;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class Main {
+    public static void main(String[] args) {
+        AuthorHelper ah = new AuthorHelper();
 
-    AuthorHelper ah = new AuthorHelper();
+        List <Author> authorList = ah.getAuthorList();
 
-    List<Author> authorList = ah.getAuthorList;
-
-    for(Author author : authorList) {
-        System.out.println(author.getId() + " " + author.getName());
+        for(Author author : authorList) {
+            System.out.println(author.getId() + " " + author.getName());
+        }
     }
 }
